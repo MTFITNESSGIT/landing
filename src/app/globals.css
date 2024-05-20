@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@layer components {
+  .background_w_image {
+    padding-bottom: 1.57042%;
+    padding-top: 0%;
+    padding-left: 0;
+    width: 105%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://content.app-sources.com/s/58783475964065609/uploads/Images/Purple_Dark_Blur_Gradient_Glass_Effect_Reminder_Notification_Instagram_Post-2865570.png?format=webp");
+  }
+
+  .divider {
+    width: 100%;
+    background-color: #232323;
+    height: 1px;
+  }
+
+  .image-filter {
+    filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 1));
+  }
+}
+
+body {
+  background-color: #000;
+  font-family: "Bebas Neue", sans-serif;
+  font-optical-sizing: auto;
+  max-width: "100vw";
+}
