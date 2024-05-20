@@ -18,7 +18,7 @@ const Checkout = () => {
   const { title, background, level, includes, values } = selectedPlan || {};
 
   return (
-    <section className="background_w_image w-full flex flex-col items-center justify-center gap-5 md:gap-0 md:justify-between px-4 md:px-10 lg:px-20 max-w-[1350px] mx-auto">
+    <section className="bg-black w-full flex flex-col items-center justify-center gap-5 md:gap-0 md:justify-between px-4 md:px-10 lg:px-20 max-w-[1350px] mx-auto">
       <div className=" p-6 w-full bg-white rounded-2xl flex flex-col items-center justify-center gap-10">
         <div className="flex flex-col justify-center items-center ">
           <h2 className="text-black font-bold text-2xl text-center">
