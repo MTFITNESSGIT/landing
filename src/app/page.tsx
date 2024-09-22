@@ -7,6 +7,7 @@ import Carousel from "../components/Carousel";
 import ScrollLink from "../components/SmoothLink";
 import Image from "next/image";
 import Advice from "../components/AdvicePage";
+import Player from "../components/Player";
 
 export default function Home() {
   return (
@@ -21,11 +22,15 @@ export default function Home() {
           </span>
         </h2>
         <div className="flex flex-col justify-center items-center gap-4 md:mt-10">
-          {/* <Player src={"/videos/video-presentacion.webm"} /> */}
-
+          <Player
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/mtfitness-dd45d.appspot.com/o/presentacion.mp4?alt=media&token=8e9fc244-51fd-43d9-8c3a-64e2107d666d"
+            }
+          />
+          {/* 
           <div className="w-full h-full bg-gradient-to-r from-[#650C0C] to-red rounded-xl border-2 border-white flex justify-center items-center lg:w-[1000px] lg:h-[565px]">
             <h3 className="text-xl font-bold px-40 py-24 lg:p-0">VIDEO</h3>
-          </div>
+          </div> */}
           <ScrollLink href="#planes">
             <Button
               background="bg-white"

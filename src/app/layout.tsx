@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,7 +26,7 @@ export default function RootLayout({
       </head>
       <body className="text-white w-full max-w-[1350px] mx-auto">
         <Header />
-        <main className="flex w-full flex-col items-center justify-between text-white ">
+        <main className="flex w-full flex-col items-center justify-between text-white">
           {children}
         </main>
         <Footer />
