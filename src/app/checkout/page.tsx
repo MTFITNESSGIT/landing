@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { plans } from "../../utils/plans";
 import PlanCheckout from "../../components/PlanCheckout";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 declare global {
@@ -12,6 +12,11 @@ declare global {
 }
 
 const Checkout = () => {
+  const router = useRouter();
+
+  const urlTest = () => {
+    router.push("/thank-you?type=musculo&category=principiante");
+  };
   const searchParams = useSearchParams();
   const plan = searchParams.get("plan");
   const selectedPlan = plans.find((p) => p.title.toLowerCase() === plan);
@@ -63,7 +68,10 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <button className="w-full max-w-[400px] cursor-pointer bg-blue p-3 rounded-md text-white flex justify-center items-center">
+        <button
+          onClick={urlTest}
+          className="w-full max-w-[400px] cursor-pointer bg-blue p-3 rounded-md text-white flex justify-center items-center"
+        >
           Mercado Pago
           <Image
             src="/imgs/mercadopago.png"

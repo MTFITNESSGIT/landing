@@ -53,7 +53,7 @@ const Carousel = () => {
           </svg>
         </button>
       </div>
-      <div className="flex flex-col md:flex-row w-full justify-center items-center my-10 md:hidden">
+      <div className="flex flex-col md:flex-row w-full justify-center items-center md:hidden">
         {plans.map((plan, i) => {
           return (
             <div key={i} className="mb-10 md:my-2">
@@ -68,7 +68,7 @@ const Carousel = () => {
           );
         })}
       </div>
-      <div className="hidden flex-col md:flex-row w-full justify-center items-center my-10 md:flex">
+      <div className="hidden flex-col md:flex-row w-full justify-center items-center mb-10 md:flex">
         {[0, 1, 2].map((offset) => {
           const index = (baseIndex + offset) % totalPlans;
           return (

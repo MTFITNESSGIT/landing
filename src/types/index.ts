@@ -2,7 +2,8 @@ export interface TButton {
   background: string;
   text: string;
   textColor: string;
-  onClick?: boolean;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
 export interface TParagraph {
@@ -10,6 +11,7 @@ export interface TParagraph {
   texts: string[];
   list?: string[];
   Switch: boolean;
+  isVisible: boolean;
 }
 
 export interface TPlan {

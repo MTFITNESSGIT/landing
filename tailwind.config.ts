@@ -18,12 +18,12 @@ const config: Config = {
         blue: "rgb(41, 105, 176)",
       },
       animation: {
-        "fade-in": "fade-in 0.6s ease-in",
+        "fade-out": "fade-out 1s ease-in-out forwards",
       },
       keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
         },
       },
       gradients: {
@@ -34,14 +34,15 @@ const config: Config = {
   },
 
   plugins: [
-    function ({ addUtilities }: any) {
-      const newUtilities = {
-        ".animate-fade-in": {
-          animation: "fade-in 0.6s ease-in",
-        },
-      };
-      addUtilities(newUtilities, ["responsive", "hover"]);
-    },
+    // function ({ addUtilities }: any) {
+    //   const newUtilities = {
+    //     ".animate-fade-in": {
+    //       animation: "fade-in 0.6s ease-in",
+    //     },
+    //   };
+    //   addUtilities(newUtilities, ["responsive", "hover"]);
+    // },
+    require("tailwindcss-animated"),
   ],
 };
 export default config;
