@@ -1,11 +1,17 @@
+"use client";
 import DividerReady from "../components/DividerReady";
 import Plans from "../components/Plans";
 import Carousel from "../components/Carousel";
 import Advice from "../components/AdvicePage";
 import Principal from "../components/Principal,";
 import ParagraphContainer from "../components/ParagraphContainer";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Principal />

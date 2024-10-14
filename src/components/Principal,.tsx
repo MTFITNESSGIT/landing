@@ -1,14 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Player from "./Player";
 import ScrollLink from "./SmoothLink";
 import Button from "./Button";
 
 const Principal = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <section className="w-full flex  flex-col items-center justify-center gap-5 md:gap-0 md:justify-between px-4 md:px-10 lg:px-20 max-w-[1350px] mx-auto animate-fade-up animate-ease-in-out animate-fill-both">
       <h2 className="flex flex-col justify-center items-center gap-5 text-center text-xl lg:text-4xl leading-4 ">
