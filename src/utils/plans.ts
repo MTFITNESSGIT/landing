@@ -6,7 +6,7 @@ export const plans = [
     title: "GANAR MASA MUSCULAR",
     level: "PRINCIPIANTE",
     quantity: 3,
-    price: 30000,
+    price: 30,
     values: [
       {
         approved: true,
@@ -63,7 +63,7 @@ export const plans = [
     title: "GANAR MASA MUSCULAR",
     level: "INTERMEDIO",
     quantity: 4,
-    price: 30000,
+    price: 30,
     values: [
       {
         approved: true,
@@ -119,7 +119,7 @@ export const plans = [
     usd: false,
     title: "GANAR MASA MUSCULAR",
     level: "AVANZADO",
-    price: 30000,
+    price: 30,
     quantity: 5,
     values: [
       {
@@ -177,7 +177,7 @@ export const plans = [
     title: "QUEMAR GRASA",
     level: "PRINCIPIANTE",
     quantity: 3,
-    price: 30000,
+    price: 30,
     values: [
       {
         approved: true,
@@ -246,7 +246,7 @@ export const plans = [
     title: "QUEMAR GRASA",
     level: "INTERMEDIO",
     quantity: 4,
-    price: 30000,
+    price: 30,
     values: [
       {
         approved: true,
@@ -315,7 +315,7 @@ export const plans = [
     title: "QUEMAR GRASA",
     level: "AVANZADO",
     quantity: 5,
-    price: 30000,
+    price: 30,
     values: [
       {
         approved: true,

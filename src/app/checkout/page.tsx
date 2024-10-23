@@ -1,26 +1,39 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { plans } from "../../utils/plans";
 import PlanCheckout from "../../components/PlanCheckout";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 
-declare global {
-  interface Window {
-    paypal?: any;
-  }
-}
-
-const Checkout = () => {
-  const router = useRouter();
-
-  const urlTest = () => {
-    router.push("/thank-you?type=musculo&category=principiante");
-  };
+const CheckoutClient = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const plan = searchParams.get("plan");
   const selectedPlan = plans.find((p) => p.title.toLowerCase() === plan);
-  const { title, background, level, includes, values } = selectedPlan || {};
+  const { title, background, level, includes, values, price } =
+    selectedPlan || {};
+
+  const handlePay = async () => {
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, price }), // Send title and price correctly
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        router.push(data.url); // Redirect to the payment page
+      } else {
+        console.error("Payment failed:", data.message);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
 
   return (
     <section className="bg-black w-full flex flex-col items-center justify-center gap-5 md:gap-0 md:justify-between px-4 md:px-10 lg:px-20 max-w-[1350px] mx-auto">
@@ -69,7 +82,7 @@ const Checkout = () => {
           </div>
         </div>
         <button
-          onClick={urlTest}
+          onClick={handlePay}
           className="w-full max-w-[400px] cursor-pointer bg-blue p-3 rounded-md text-white flex justify-center items-center"
         >
           Mercado Pago
@@ -91,4 +104,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default CheckoutClient;
